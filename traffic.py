@@ -19,6 +19,9 @@ def main():
     if len(sys.argv) not in [2, 3]:
         sys.exit("Usage: python traffic.py data_directory [model.h5]")
 
+    # Check GPUs
+    print(f"\nNum GPUs Available: {len(tf.config.experimental.list_physical_devices('GPU'))} \n")
+
     # Get image arrays and labels for all image files
     images, labels = load_data(sys.argv[1])
 
@@ -58,7 +61,17 @@ def load_data(data_dir):
     be a list of integer labels, representing the categories for each of the
     corresponding `images`.
     """
-    raise NotImplementedError
+    images = []
+    labels = []
+    for category in range(NUM_CATEGORIES):
+        path = os.path.join(data_dir, str(category))
+        for file in os.listdir(path):
+            img_file = os.path.join(path, file)
+            img = cv2.imread(img_file)
+            img = cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT))
+            images.append(img)
+            labels.append(category)
+    return (images, labels)
 
 
 def get_model():
@@ -67,7 +80,37 @@ def get_model():
     `input_shape` of the first layer is `(IMG_WIDTH, IMG_HEIGHT, 3)`.
     The output layer should have `NUM_CATEGORIES` units, one for each category.
     """
-    raise NotImplementedError
+    # Generate sequential model for CNN
+    model = tf.keras.models.Sequential()
+
+    # Define input shape
+    model.add(tf.keras.Input(shape = (30, 30, 3)))
+
+    # Convolution layer with 3 filters, using 3x3 kernel matrix
+    model.add(tf.keras.layers.Conv2D(3, (3, 3), activation="relu"))
+
+    # 2x2 Max Pooling 2D layer
+    model.add(tf.keras.layers.MaxPooling2D(pool_size=(2, 2)))
+
+    # Flatten Data from 3D to 1D
+    model.add(tf.keras.layers.Flatten())
+
+    # Hidden layer with 4 units
+    model.add(tf.keras.layers.Dense(10, activation="relu"))
+
+    # Hidden layer with 3 units
+    model.add(tf.keras.layers.Dense(10, activation="relu"))
+
+    # Output layer with NUM_CATEGORIES outputs
+    model.add(tf.keras.layers.Dense(NUM_CATEGORIES, activation="sigmoid"))
+
+    # Print structure of model
+    model.summary()
+
+    # Compile model for training
+    model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
+
+    return model
 
 
 if __name__ == "__main__":
