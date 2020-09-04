@@ -6,7 +6,7 @@ import tensorflow as tf
 
 from sklearn.model_selection import train_test_split
 
-EPOCHS = 10
+EPOCHS = 20
 IMG_WIDTH = 30
 IMG_HEIGHT = 30
 NUM_CATEGORIES = 43
@@ -86,8 +86,8 @@ def get_model():
     # Define input shape
     model.add(tf.keras.Input(shape = (30, 30, 3)))
 
-    # Convolution layer with 3 filters, using 3x3 kernel matrix
-    model.add(tf.keras.layers.Conv2D(3, (3, 3), activation="relu"))
+    # Convolution layer with 10 filters, using 3x3 kernel matrix
+    model.add(tf.keras.layers.Conv2D(10, (3, 3), activation="relu"))
 
     # 2x2 Max Pooling 2D layer
     model.add(tf.keras.layers.MaxPooling2D(pool_size=(2, 2)))
@@ -95,11 +95,17 @@ def get_model():
     # Flatten Data from 3D to 1D
     model.add(tf.keras.layers.Flatten())
 
-    # Hidden layer with 4 units
-    model.add(tf.keras.layers.Dense(10, activation="relu"))
+    # Hidden layer with 100 units
+    model.add(tf.keras.layers.Dense(100, activation="relu"))
 
-    # Hidden layer with 3 units
-    model.add(tf.keras.layers.Dense(10, activation="relu"))
+    # Hidden layer with 10 units
+    model.add(tf.keras.layers.Dense(100, activation="relu"))
+
+    # Hidden layer with 10 units
+    model.add(tf.keras.layers.Dense(100, activation="relu"))
+
+    # Hidden layer with 10 units
+    model.add(tf.keras.layers.Dense(100, activation="relu"))
 
     # Output layer with NUM_CATEGORIES outputs
     model.add(tf.keras.layers.Dense(NUM_CATEGORIES, activation="sigmoid"))
