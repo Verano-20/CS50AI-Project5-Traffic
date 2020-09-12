@@ -22,8 +22,8 @@ Other layers are altered throughout testing.
 
 Test 1 - Optimise the number of units in 1, 2, 10 and 100 identical dense layers from 1 to 1000.
 
-<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/Test1-Accuracy.png" alt="Test 1 Accuracy Graph" />
-<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/Test1-Loss.png" alt="Test 1 Loss Graph" />
+<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/Test1-Accuracy.png" alt="Test 1 Accuracy Graph" />
+<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/Test1-Loss.png" alt="Test 1 Loss Graph" />
 
 We can see clearly from test 1 that when only using dense layers, changing the number of layers and number of units in those layers (if the layers are identical) has no significant effect on the accuracy or the loss. When using only 1 dense layer, there is a very slight trend towards decreased accuracy and increased loss as the number of units increases.
 
@@ -53,8 +53,8 @@ From previous we can see that individually, these layers are not enough to give 
 
 Test 4 - Including with a single Conv2D layer with 32 filters and a 3x3 kernel size, and a Max Pooling layer with a 6x6 pool size, optimise the number of units in 1, 10 and 100 identical dense layers from 1 to 1000.
 
-<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/Test4-Accuracy.png" alt="Test 4 Accuracy Graph" />
-<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/Test4-Loss.png" alt="Test 4 Loss Graph" />
+<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/Test4-Accuracy.png" alt="Test 4 Accuracy Graph" />
+<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/Test4-Loss.png" alt="Test 4 Loss Graph" />
 
 Adding a single dense layer enables accuracy to reach ~93%. While the number of units is 10 or below accuracy is ~5%, but when the number of units reaches 30 accuracy jumps to ~82%, and by 250 units accuracy has peaked at ~93%.
 
