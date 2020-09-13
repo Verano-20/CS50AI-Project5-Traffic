@@ -70,7 +70,6 @@ It is clear then that more is not necessarily better, and that there must exist 
 
 Test 5 - Repeat test 4 for 1 dense layer with a finer iteration on the number of units in the dense layer. Find more precisely where the peak accuracy is.
 
-Test4-Accuracy.png" alt="Test 4 Accuracy Graph" />
 <img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/Test5.png" alt="Test 5 Graph" />
 
 The accuracy and loss are much more volatile at lower numbers of units, and the improvement tapers off as the number of units reaches 200. The maximum accuracy in this test was 92.56% which occurred with 190 units in the single dense layer.
