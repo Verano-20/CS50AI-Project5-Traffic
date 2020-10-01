@@ -74,7 +74,7 @@ From previous we can see that individually, these layers are not enough to give 
 With a single Conv2D layer with 16 filters and a 3x3 kernel size, and a Max Pooling layer with a 6x6 pool size, optimise the number of units in 1, 10 and 100 identical dense layers from 1 to 1000.
 
 <img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/media/test4-structure.png" alt="Test 4 Structure" />
-<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/mediaTest4-Accuracy.png" alt="Test 4 Accuracy Graph" />
+<img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/media/Test4-Accuracy.png" alt="Test 4 Accuracy Graph" />
 <img src="https://github.com/Verano-20/CS50AI-Project5-Traffic/blob/master/media/Test4-Loss.png" alt="Test 4 Loss Graph" />
 
 Adding a single dense layer enables accuracy to reach ~93%. While the number of units is 10 or below accuracy is ~5%, but when the number of units reaches 30 accuracy jumps to ~82%, and by 250 units accuracy has peaked at ~93%.
