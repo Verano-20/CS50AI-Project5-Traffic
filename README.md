@@ -1,6 +1,15 @@
 # CS50AI-Project5-Traffic
 An AI to identify traffic signs using a neural network with TensorFlow.
 
+Used the German Traffic Sign Recognition Benchmark (GTSRB) dataset to train the neural network to classify 43 different types of traffic signs.
+
+After a non-exhaustive investigation the network was evaluated with an accuracy of 92.77% and a loss of 0.33.
+
+GTSRB: http://benchmark.ini.rub.de/?section=gtsrb&subsection=news
+
+Dataset (zip): https://cdn.cs50.net/ai/2020/x/projects/5/gtsrb.zip
+
+
 For this problem I investigated several variations on the structure of the neural network. This was by no means an exhaustive investigation, and is just a quick look into how some paramters affect the output. To investigate this fully it would make sense to implement a more in depth algorithm as it is an iterative process which could be framed as an optimisation problem.
 
 ## Methodology:
